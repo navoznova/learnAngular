@@ -1,0 +1,14 @@
+.success-block {
+    margin-left: 20px;
+    padding-left: 20px;
+
+    width: 50%;
+    height: 100px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: rgb(92, 179, 113);
+    border: 2px solid rgb(40, 78, 39);
+    border-radius: 10px;
+}
