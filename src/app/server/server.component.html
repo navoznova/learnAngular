@@ -2,8 +2,7 @@
 <input 
     type="text" 
     class="form-control"
-    [(ngModel)]="serverName"
-    (input)="addServerNameEvent($event)">
+    [(ngModel)]="serverName">
 
 <!-- Event binding -->
 <!-- <input 
@@ -15,7 +14,7 @@
 
 <button 
     class="btn btn-danger"
-    [disabled]="!isEmpty"
+    [disabled]="!isEmpty()"
     (click)="deleteServerName()">Delete</button>
 
 <p>Server with ID {{ serverId }} is {{ getServerStatus() }}</p>

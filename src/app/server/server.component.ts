@@ -9,7 +9,6 @@ export class ServerComponent {
     serverId: number = 10;
     serverName = '';
     serverStatus: string = 'offline';
-    isEmpty = false;
 
     getServerStatus(){
         return this.serverStatus;
@@ -17,15 +16,13 @@ export class ServerComponent {
 
     addServerName (event: Event) {
         this.serverName = (<HTMLInputElement>event.target).value;
-        this.isEmpty = true;
     }
 
-    addServerNameEvent (event: Event) {
-        this.isEmpty = true;
+    isEmpty() {
+        return this.serverName;
     }
 
     deleteServerName(){
         this.serverName = '';
-        this.isEmpty = false;
     }
 }
