@@ -1,10 +1,10 @@
 <label>Server name</label>
 
 <!-- Event binding and property binding -->
-<!-- <input
+<input
     type="text"
     class="form-control"
-    (input)="onUpdateServerName($event)"> -->
+    (input)="onUpdateServerName($event)">
 
 <!-- Two-way binding -->
 <input
@@ -12,7 +12,7 @@
     class="form-control"
     [(ngModel)]="serverName">
 
-<!-- <p>{{serverName}}</p> -->
+<p>{{serverName}}</p>
 
 <button 
     class="btn btn-primary" 
@@ -23,5 +23,4 @@
 <p [innerText]="allowNewServer"></p>
 <p>{{ serverCreationStatus }}</p>
 
-<app-server></app-server>
 <app-server></app-server>

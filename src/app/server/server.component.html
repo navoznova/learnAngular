@@ -1,1 +1,21 @@
+<!-- Two-way binding -->
+<input 
+    type="text" 
+    class="form-control"
+    [(ngModel)]="serverName"
+    (input)="addServerNameEvent($event)">
+
+<!-- Event binding -->
+<!-- <input 
+    type="text" 
+    class="form-control"
+    (input)="addServerName($event)"> -->
+
+<p>Server name is {{ serverName }}</p>
+
+<button 
+    class="btn btn-danger"
+    [disabled]="!isEmpty"
+    (click)="deleteServerName()">Delete</button>
+
 <p>Server with ID {{ serverId }} is {{ getServerStatus() }}</p>
