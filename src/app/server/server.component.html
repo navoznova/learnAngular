@@ -1,8 +1,12 @@
+<p [ngStyle]="{backgroundColor: getColor()}">Server with ID {{ serverId }} is {{ getServerStatus() }}</p>
+
+<!-- Task #2 -->
+
 <!-- Two-way binding -->
-<input 
+<!-- <input 
     type="text" 
     class="form-control"
-    [(ngModel)]="serverName">
+    [(ngModel)]="serverName"> -->
 
 <!-- Event binding -->
 <!-- <input 
@@ -10,11 +14,9 @@
     class="form-control"
     (input)="addServerName($event)"> -->
 
-<p>Server name is {{ serverName }}</p>
+<!-- <p>Server name is {{ serverName }}</p> -->
 
-<button 
+<!-- <button 
     class="btn btn-danger"
     [disabled]="!isEmpty()"
-    (click)="deleteServerName()">Delete</button>
-
-<p>Server with ID {{ serverId }} is {{ getServerStatus() }}</p>
+    (click)="deleteServerName()">Delete</button> -->

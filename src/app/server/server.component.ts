@@ -10,11 +10,19 @@ export class ServerComponent {
     serverName = '';
     serverStatus: string = 'offline';
 
-    getServerStatus(){
+    constructor() {
+        this.serverStatus = Math.random() > 0.5 ? 'online' : 'offline';
+    }
+
+    getServerStatus() {
         return this.serverStatus;
     }
 
-    addServerName (event: Event) {
+    getColor() {
+        return this.serverStatus === 'online' ? 'green' : 'red';
+    }
+
+    addServerName(event: Event) {
         this.serverName = (<HTMLInputElement>event.target).value;
     }
 
@@ -22,7 +30,7 @@ export class ServerComponent {
         return this.serverName;
     }
 
-    deleteServerName(){
+    deleteServerName() {
         this.serverName = '';
     }
 }
