@@ -4,9 +4,8 @@
     (click)="displayPassword()">Display details</button>
 <p *ngIf="display">Secret Password = tuna</p>
 
-<ng-container *ngFor="let clickNumber of clickNumbers">
-    <p 
-        [textContent]="clickNumber"
-        [ngStyle]="{background: clickNumber >= 5 ? 'blue' : ''}"
-        [ngClass]="{'clickStyle': clickNumber >= 5 }"></p>
-  </ng-container>
+
+<div 
+    *ngFor="let clickNumber of clickNumbers"
+    [ngStyle]="{background: clickNumber >= 5 ? 'blue' : ''}"
+    [ngClass]="{'clickStyle': clickNumber >= 5 }">{{clickNumber}}</div>
