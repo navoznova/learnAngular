@@ -6,16 +6,22 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { RecipeBookComponent } from './recipe-book/recipe-book.component';
+import { RecipesComponent } from './recipes/recipes.component';
 import { EditComponent } from './shopping-list/edit/edit.component';
+import { RecipeDetailsComponent } from './recipes/recipe-details/recipe-details.component';
+import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
+import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ShoppingListComponent,
-    RecipeBookComponent,
+    RecipesComponent,
     EditComponent,
+    RecipeDetailsComponent,
+    RecipeItemComponent,
+    RecipeListComponent
   ],
   imports: [
     BrowserModule,
