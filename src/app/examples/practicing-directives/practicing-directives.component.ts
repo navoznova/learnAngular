@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PracticingDirectivesComponent implements OnInit {
   display = false;
-  clickNumbers: any = [];
+  clickNumbers: number[] = [];
 
   constructor() { }
 
@@ -15,9 +15,8 @@ export class PracticingDirectivesComponent implements OnInit {
   }
 
   displayPassword() {
-    // let lastClickIndex = this.clickNumbers.length+1;
-    // this.clickNumbers.push(lastClickIndex);
-    this.clickNumbers.push(new Date());
+    let lastClickIndex = this.clickNumbers.length+1;
+    this.clickNumbers.push(lastClickIndex);
     this.display = !this.display;
   }
 }
