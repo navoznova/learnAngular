@@ -22,5 +22,10 @@ export class ShoppingListService{
     this.shoppingListChanged.emit(this.ingredients.slice());
   }
 
+  onAddNewIngredients(ingredients: Ingredient[]){
+    this.ingredients.push(...ingredients);
+    this.shoppingListChanged.emit(this.ingredients.slice());
+  }
+
   constructor() { }
 }
