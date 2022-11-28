@@ -7,12 +7,4 @@ import { Recipe } from './recipes/recipe.module';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    // loadedfeature: string = 'recipe';
-
-    // onNavigate(feature: string) {
-    //     this.loadedfeature = feature;
-    // }
-
-
-    title = 'my-app';
 }
