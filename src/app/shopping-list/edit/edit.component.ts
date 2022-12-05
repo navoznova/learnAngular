@@ -1,4 +1,5 @@
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { Ingredient } from 'src/app/shared/ingredient.module';
 import { ShoppingListService } from '../shopping-list.service';
 
@@ -8,12 +9,10 @@ import { ShoppingListService } from '../shopping-list.service';
     styleUrls: ['./edit.component.css']
 })
 export class EditComponent implements OnInit {
-    @ViewChild('nameInputRef') nameInput: ElementRef | undefined;
-    @ViewChild('amountInputRef') amountInput: ElementRef | undefined;
     
-    onCreateNewPosition() {
-        let name = this.nameInput?.nativeElement.value;
-        let amount = this.amountInput?.nativeElement.value;
+    onCreateNewPosition(form: NgForm) {
+        let name = form.value.name;
+        let amount = form.value.amount;
         let newIngreientObj = new Ingredient(name, amount);
         this.shoppingListService.onAddNewIngredient(newIngreientObj);
     }
