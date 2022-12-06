@@ -17,19 +17,6 @@ export class EditComponent implements OnInit, OnDestroy {
     subscrotion!: Subscription;
     ingredientToEdit!: Ingredient;
 
-    onCreateNewPosition(form: NgForm) {
-        let name = form.value.name;
-        let amount = form.value.amount;
-        if (this.editingMode) {
-            this.shoppingListService.updateIngredient(this.ingredientIndex, new Ingredient(name, amount));
-        } else {
-            let newIngreientObj = new Ingredient(name, amount);
-            this.shoppingListService.onAddNewIngredient(newIngreientObj);
-        }
-        this.form.resetForm();
-        this.editingMode = false;
-    }
-
     constructor(private shoppingListService: ShoppingListService) { }
 
     ngOnInit(): void {
@@ -48,6 +35,29 @@ export class EditComponent implements OnInit, OnDestroy {
 
     ngOnDestroy(): void {
         this.subscrotion.unsubscribe();
+    }
+
+    onCreateNewPosition(form: NgForm) {
+        let name = form.value.name;
+        let amount = form.value.amount;
+        if (this.editingMode) {
+            this.shoppingListService.updateIngredient(this.ingredientIndex, new Ingredient(name, amount));
+        } else {
+            let newIngreientObj = new Ingredient(name, amount);
+            this.shoppingListService.onAddNewIngredient(newIngreientObj);
+        }
+        this.form.resetForm();
+        this.editingMode = false;
+    }
+
+    onClear() {
+        this.form.resetForm();
+        this.editingMode = false;
+    }
+    
+    onDelete(){
+        this.shoppingListService.deleteIngredients(this.ingredientIndex);
+        this.onClear();
     }
 
 }
