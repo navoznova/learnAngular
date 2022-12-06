@@ -26,6 +26,8 @@ export class EditComponent implements OnInit, OnDestroy {
             let newIngreientObj = new Ingredient(name, amount);
             this.shoppingListService.onAddNewIngredient(newIngreientObj);
         }
+        this.form.resetForm();
+        this.editingMode = false;
     }
 
     constructor(private shoppingListService: ShoppingListService) { }
