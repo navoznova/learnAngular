@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'; 
-import { Recipe } from './recipes/recipe.module';
+import { FormGroup } from '@angular/forms';
+import { Recipe } from './recipes/recipe.interface';
 
 @Component({
     selector: 'app-root',
