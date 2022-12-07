@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormControl, FormGroup, FormGroupName } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, FormGroupName, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
 import { RecipeService } from '../recipe.service';
 
@@ -41,17 +41,17 @@ export class RecipeEditComponent implements OnInit {
             if(currentRecipe.ingredients){
                 for(let ingredient of currentRecipe.ingredients) {
                     ingredientsArray.push(new FormGroup ({
-                        'name': new FormControl(ingredient.name),
-                        'amount': new FormControl(ingredient.amount),
+                        'name': new FormControl(ingredient.name, Validators.required),
+                        'amount': new FormControl(ingredient.amount, Validators.required),
                     }));
                 }
             }
         }
 
         this.recipeForm = new FormGroup ({
-            'name': new FormControl(name),
-            'path': new FormControl(path),
-            'description': new FormControl(description),
+            'name': new FormControl(name, Validators.required),
+            'path': new FormControl(path, Validators.required),
+            'description': new FormControl(description, Validators.required),
             'ingredients': ingredientsArray
            
         })
@@ -59,6 +59,13 @@ export class RecipeEditComponent implements OnInit {
 
     onSubmit(){
         console.log(this.recipeForm)
+    }
+
+    onAddIngridient() {
+        (<FormArray>this.recipeForm.get('ingredients')).push(new FormGroup({
+            'name': new FormControl(null, Validators.required),
+            'amount': new FormControl(null, Validators.required),
+        }))
     }
 
     get controls() { // a getter!
