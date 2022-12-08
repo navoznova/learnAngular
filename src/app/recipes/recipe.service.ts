@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Ingredient } from '../shared/ingredient.module';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from './recipe.interface';
@@ -8,6 +9,9 @@ import { Recipe } from './recipe.interface';
 })
 
 export class RecipeService {
+    recipeListChanged = new Subject<Recipe[]>();
+
+
     recipes: Recipe[] = [
         new Recipe(1, 'Name1', 'Description1', 'https://www.tourprom.ru/site_media/images/upload/2018/10/7/newsphoto/pinchos.jpg',
             [
@@ -35,6 +39,21 @@ export class RecipeService {
     getRecipeByIndex(index: number){
         return this.recipes[index];
     };
+
+    addNewRecipe(newRecipe: Recipe){
+        this.recipes.push(newRecipe);
+        this.recipeListChanged.next(this.recipes);
+    }
+
+    updateNewRecipe(index: number, newRecipe: Recipe){
+        this.recipes[index] = newRecipe;
+        this.recipeListChanged.next(this.recipes);
+    }
+
+    deleteRecipe(index: number){
+        this.recipes.splice(index, 1);
+        this.recipeListChanged.next(this.recipes);
+    }
 
 
     onAddNewIngredientViaRecipeService(ingredients: Ingredient[]) {
