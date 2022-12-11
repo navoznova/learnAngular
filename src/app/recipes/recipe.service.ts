@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { DataStorageService } from '../shared/data-storage.service';
 import { Ingredient } from '../shared/ingredient.module';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Recipe } from './recipe.interface';
@@ -30,7 +31,8 @@ export class RecipeService {
             ]),
     ];
 
-    constructor(private shopingListService: ShoppingListService) { }
+    constructor(private shopingListService: ShoppingListService,
+                private dataStorageService: DataStorageService) { }
 
     getRecipes() {
         return this.recipes.slice();
