@@ -13,26 +13,14 @@ export class RecipeService {
     recipeListChanged = new Subject<Recipe[]>();
 
 
-    recipes: Recipe[] = [
-        new Recipe(1, 'Name1', 'Description1', 'https://www.tourprom.ru/site_media/images/upload/2018/10/7/newsphoto/pinchos.jpg',
-            [
-                new Ingredient('meat', 3),
-                new Ingredient('souce', 2)
-            ]),
-        new Recipe(2, 'Name2', 'Description2', 'https://www.tourprom.ru/site_media/images/upload/2018/10/7/newsphoto/pinchos.jpg',
-            [
-                new Ingredient('chicken', 3),
-                new Ingredient('potato', 2)
-            ]),
-        new Recipe(3, 'Name3', 'Description3', 'https://www.tourprom.ru/site_media/images/upload/2018/10/7/newsphoto/pinchos.jpg',
-            [
-                new Ingredient('chicken', 3),
-                new Ingredient('potato', 2)
-            ]),
-    ];
+    recipes: Recipe[] = [];
 
-    constructor(private shopingListService: ShoppingListService,
-                private dataStorageService: DataStorageService) { }
+    constructor(private shopingListService: ShoppingListService) { }
+
+    setRecipes(recipe: Recipe[]){
+        this.recipes = recipe;
+        this.recipeListChanged.next(this.recipes);
+    }
 
     getRecipes() {
         return this.recipes.slice();
