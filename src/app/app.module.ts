@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { EditComponent } from './shopping-list/edit/edit.component';
-import { DropDownDirective } from './shared/drop-down.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeModule } from './recipes/recipe.module';
 
@@ -18,7 +17,6 @@ import { RecipeModule } from './recipes/recipe.module';
     HeaderComponent,
     ShoppingListComponent,
     EditComponent,
-    DropDownDirective,
   ],
   imports: [
     BrowserModule,

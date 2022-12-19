@@ -10,6 +10,7 @@ import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.compo
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { RecipesComponent } from './recipes.component';
 import { RecipeRoutingModule } from './recipe-routing.module';
+import { DropDownDirective } from '../shared/drop-down.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RecipeRoutingModule } from './recipe-routing.module';
     RecipeDetailsComponent,
     RecipeItemComponent,
     RecipeListComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    DropDownDirective,
   ],
   imports: [
     CommonModule,
