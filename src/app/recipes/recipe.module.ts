@@ -27,13 +27,6 @@ import { DropDownDirective } from '../shared/drop-down.directive';
     AppRoutingModule,
     ReactiveFormsModule,
     RecipeRoutingModule
-  ],
-  exports:[
-    RecipesComponent,
-    RecipeDetailsComponent,
-    RecipeItemComponent,
-    RecipeListComponent,
-    RecipeEditComponent
-  ],
+  ]
 })
 export class RecipeModule { }

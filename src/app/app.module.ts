@@ -6,17 +6,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HeaderComponent } from './header/header.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { EditComponent } from './shopping-list/edit/edit.component';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { RecipeModule } from './recipes/recipe.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ShoppingListComponent,
-    EditComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +21,8 @@ import { RecipeModule } from './recipes/recipe.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RecipeModule
+    RecipeModule,
+    ShoppingListModule
   ],
   providers: [ShoppingListService],
   bootstrap: [AppComponent],
